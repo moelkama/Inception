@@ -1,0 +1,27 @@
+FROM debian:11
+
+RUN apt update -y && apt upgrade -y
+
+RUN apt install wget -y
+
+RUN wget https://wordpress.org/latest.tar.gz -P /var/www/
+RUN cd /var/www/ && tar -xzvf latest.tar.gz
+RUN rm -rf /var/www/latest.tar.gz
+
+RUN apt install curl -y
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN apt install less -y
+
+RUN apt-get install -y php7.4 \
+    php7.4-fpm \
+    php7.4-mysql\
+    mariadb-client
+
+COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
+COPY ./conf/script.sh ./script.sh
+
+RUN chmod +x /script.sh
+RUN mkdir run/php
+
+CMD ["./script.sh"]

@@ -1,0 +1,72 @@
+version: '3.7'
+
+services:
+  nginx:
+    depends_on:
+      - wordpress
+    image: nginx
+    build: ./requirements/nginx/
+    container_name: nginx
+    env_file:
+      - .env
+    ports:
+      - 443:443
+    networks:
+      - inception
+    volumes:
+      - wordpress:/var/www/wordpress/
+    restart: always
+
+  mariadb:
+    image: mariadb
+    build: ./requirements/mariadb
+    container_name: mariadb
+    env_file:
+      - .env
+    expose:
+      - 3306
+    networks:
+      - inception
+    volumes:
+      - mariadb:/var/lib/mysql
+    restart: always
+
+
+  wordpress:
+    depends_on:
+      - mariadb
+    image: wordpress
+    build: ./requirements/wordpress/
+    container_name: wordpress
+    expose:
+      - 9000
+    networks:
+      - inception
+    env_file:
+      - .env
+    volumes:
+      - wordpress:/var/www/wordpress/
+    restart: always
+
+
+networks:
+  inception:
+    name: inception
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/moelkama/data/wordpress'
+  
+
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/moelkama/data/mariadb'

@@ -2,6 +2,8 @@
 
 This project sets up a WordPress website using Nginx as the web server, with SSL/TLS for secure connections and MariaDB for database storage. All components run in separate Docker containers, managed by Docker Compose.
 
+<img width="562" alt="Screen Shot 2021-12-22 at 8 38 03 PM" src="https://user-images.githubusercontent.com/54292953/147146268-a616f39a-3f16-41f8-80c9-db5494c3dfe7.png">
+
 ## Technologies Used
 
 - **Docker**: For containerization.

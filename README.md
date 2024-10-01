@@ -37,7 +37,7 @@ This project sets up a WordPress website using Nginx as the web server, with SSL
    you can access the website at: https://localhost
 
 ### Ressources
-- [Docker Documentation]([https://docs.docker.com/get-docker/](https://docs.docker.com/get-started/))
+- [Docker Documentation](https://docs.docker.com/get-started/)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker](https://docs.docker.com/get-docker/) installed on your machine.
 - [Docker](https://docs.docker.com/get-docker/) installed on your machine.

@@ -38,7 +38,7 @@ This project sets up a WordPress website using Nginx as the web server, with SSL
 
 ### Ressources
 - [Docker Documentation](https://docs.docker.com/get-started/)
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker](https://docs.docker.com/get-docker/) installed on your machine.
-- [Docker](https://docs.docker.com/get-docker/) installed on your machine.
-- [Docker](https://docs.docker.com/get-docker/) installed on your machine.
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [Nginx Documentation](https://nginx.org/en/docs/)
+- [WordPress Documentation](https://wordpress.org/documentation/)
+- [MariaDB Documentation](https://mariadb.com/kb/en/documentation/)

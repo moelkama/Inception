@@ -28,5 +28,6 @@ This project sets up a WordPress website using Nginx as the web server, with SSL
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone git@github.com:moelkama/Inception.git
+   cd Inception
+   make

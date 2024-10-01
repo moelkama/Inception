@@ -31,3 +31,7 @@ This project sets up a WordPress website using Nginx as the web server, with SSL
    git clone git@github.com:moelkama/Inception.git
    cd Inception
    make
+
+### Accessing the Website
+   Once the containers are running,
+   you can access the website at: https://localhost
